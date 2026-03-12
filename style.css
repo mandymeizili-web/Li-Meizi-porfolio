@@ -1,0 +1,469 @@
+/* --- 导入谷歌字体 --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* --- 全局变量和样式 --- */
+:root {
+    --primary-color: #ffc107;         /* 主要高亮色 (黄色，保持不变) */
+    --primary-color-dark: #d4a106;
+
+    /* --- 以下是为白色主题进行的核心修改 --- */
+    --bg-main-color: #ffffff;         /* 主背景色 (纯白) */
+    --bg-secondary-color: #f9f9f9;     /* 内容区域背景色 (极浅灰，增加层次感) */
+    --text-primary-color: #333333;     /* 主要文字颜色 (深灰) */
+    --text-secondary-color: #666666;   /* 次要文字颜色 (中灰) */
+    --border-color: #eeeeee;         /* 边框颜色 (浅灰) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* 平滑滚动效果 */
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* 全局使用 Lato 字体 */
+    line-height: 1.6;
+    background-color: var(--bg-main-color);
+    color: var(--text-primary-color);
+    display: flex; /* 关键：开启flex布局，用于左右分栏 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* 所有标题使用 Playfair Display 字体 */
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color-dark);
+}
+
+/* --- 左侧导航栏 --- */
+.sidebar {
+    width: 260px; /* 导航栏宽度 */
+    height: 100vh; /* 高度占满全屏 */
+    position: fixed; /* 固定在屏幕上 */
+    top: 0;
+    left: 0;
+    background-color: var(--bg-main-color);
+    border-right: 1px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1000;
+}
+
+.sidebar-header {
+    margin-bottom: 2rem;
+}
+
+.sidebar-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary-color);
+}
+
+.sidebar-header p {
+    font-size: 0.9rem;
+    color: var(--text-secondary-color);
+}
+
+.nav-links {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 0.8rem 0;
+    color: var(--text-secondary-color);
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover {
+    color: var(--bg-main-color);
+    background-color: var(--primary-color);
+}
+
+/* --- 右侧主内容区 --- */
+.main-content {
+    flex-grow: 1;
+    margin-left: 260px; /* 关键：为左侧导航栏留出空间 */
+    padding: 0;
+}
+
+.content-section {
+    padding: 80px 5%; /* 统一的上下和左右边距 */
+    background-color: var(--bg-secondary-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#home { /* 主页特殊处理，背景更深 */
+    background-color: var(--bg-main-color);
+}
+
+/* --- 1. 主页 (Homepage) - 文字+竖直照片最终版 --- */
+#home {
+    background-color: var(--bg-secondary-color); /* 极浅灰色背景 */
+    min-height: 100vh;
+    padding: 40px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-container {
+    display: flex;
+    justify-content: space-between; /* 在子元素之间创建空间 */
+    align-items: center;            /* 垂直居中对齐 */
+    gap: 3rem;                      /* 设置文字和照片之间的固定间距 */
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* --- 文字区域样式 --- */
+.home-text {
+    flex-basis: 60%; /* 文字区域占据大约60%的宽度 */
+    text-align: left; /* 文字左对齐 */
+    color: var(--text-primary-color);
+}
+
+.home-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.home-text .highlight-name {
+    color: #000000; /* 名字用黑色强调 */
+}
+
+.home-tagline {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-secondary-color); 
+    margin-top: 1rem;
+    max-width: 600px;
+}
+
+/* --- 照片区域样式 (竖直矩形版) --- */
+.home-photo {
+    flex-basis: 35%; /* 照片区域宽度占比 */
+    max-width: 300px; /* 限制照片的最大宽度 */
+    flex-shrink: 0;   /* 防止照片在空间不足时被压缩 */
+}
+
+.home-photo img {
+    width: 100%;
+    height: auto;
+    
+    /* 核心：设置圆角，而不是圆形 */
+    border-radius: 12px; 
+    
+    /* 增加白色边框和阴影，提升质感 */
+    border: 5px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 2. 教育背景 (Education) --- */
+.edu-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--bg-main-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.edu-item:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+.edu-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: white; /* 给logo加个白底，避免透明logo看不清 */
+    border-radius: 50%;
+    padding: 5px;
+}
+.edu-text h3 {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    font-size: 1.4rem;
+}
+.edu-text p {
+    margin: 0;
+    color: var(--text-secondary-color);
+}
+
+
+/* ======================================================
+   作品展示区样式 (Content Creation / Portfolio Section)
+
+/* ======================================================
+   作品展示区样式 (Content Creation / Portfolio Section)
+   ====================================================== */
+
+/* --- 1. 统一且美化的副标题 --- */
+/* (应用于 AI, Content Creation, Hobby) */
+#ai-digital-media h3,
+#content-creation h3,
+#hobby h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary-color);
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+/* 使用伪元素创建一条居中的、不完整的装饰下划线 ... */
+#ai-digital-media h3::after,
+#content-creation h3::after,
+#hobby h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+
+/* --- 2. 核心网格布局 --- */
+/* 你HTML中的 .hobby-photo-grid 会使用这个样式 */
+.hobby-photo-grid {
+    display: grid;
+    gap: 1.5rem; /* 网格间距 */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: start; /* 关键：确保网格项从顶部对齐，防止被拉伸 */
+}
+
+/* --- 3. 为「Hobby & Travel」创建三列布局 --- */
+/* 我们将给Hobby & Travel的网格添加一个新class: .grid-three-columns */
+.grid-three-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* --- 4. 为「Poster Design」创建自适应两列布局 --- */
+/* 你HTML中的 .grid-vertical-posters 会使用这个样式 */
+.grid-vertical-posters {
+    /* 使用auto-fit，但限制最大宽度，使其在大屏幕上通常显示为两列 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 800px; /* 限制宽度，更适合海报并排展示 */
+}
+
+
+/* --- 5. 单个作品卡片样式 (photo-item) --- */
+.photo-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: pointer;
+    background-color: #f0f0f0; /* 图片加载前的占位背景色 */
+    
+    /* 【关键修改】移除固定的 height: 250px; 
+       这允许卡片高度自由适应内容，对竖长海报至关重要 */
+}
+
+/* --- 6. 为「Hobby & Travel」的卡片设置固定比例 --- */
+/* 我们将给这些卡片添加新class: .aspect-ratio-card */
+.aspect-ratio-card {
+    aspect-ratio: 4 / 3; /* 强制卡片为 4:3 比例，使网格非常整齐 */
+}
+
+.photo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* --- 7. 图片样式 --- */
+.photo-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 关键：图片填满卡片，保持比例，多余部分裁剪 */
+    transition: filter 0.4s ease-in-out, transform 0.4s ease;
+}
+
+/* --- 8. 悬停效果 (保持不变，效果很好) --- */
+.photo-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.photo-overlay h3 {
+    color: var(--text-primary-color); 
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.8), 
+                 0px 0px 6px rgba(255, 255, 255, 0.9);
+}
+
+.photo-item:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-item:hover img {
+    filter: blur(8px) brightness(0.9);
+    transform: scale(1.05); /* 增加轻微放大效果，更有动感 */
+}
+
+/* --- 9. 项目描述文字区域 (保持不变) --- */
+.project-description {
+    max-width: 720px;
+    margin: 2.5rem auto 0 auto;
+    text-align: left;
+    line-height: 1.7;
+    color: #555;
+}
+.project-description p { margin-bottom: 1rem; }
+.project-description p:last-child { margin-bottom: 0; }
+.project-description strong { color: #222; }
+
+
+/* --- 10. 响应式调整 --- */
+@media (max-width: 992px) {
+    /* 在平板设备上，三列布局变为两列 */
+    .grid-three-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    /* 在手机上，所有网格都变为单列 */
+    .grid-three-columns,
+    .grid-vertical-posters {
+        grid-template-columns: 1fr;
+    }
+
+    #content-creation h3,
+    #hobby h3 {
+        font-size: 1.8rem; /* 在手机上减小副标题字号 */
+    }
+
+    .photo-overlay h3 {
+        font-size: 1.5rem; /* 减小悬停文字大小 */
+    }
+}
+
+/* --- 5. 联系方式 --- */
+.contact-info {
+ text-align: center;
+ font-size: 1.2rem;
+}
+.contact-info p {
+ margin-bottom: 1rem;
+}
+.contact-info .fas {
+ color: var(--primary-color);
+ margin-right: 10px;
+}
+.contact-info a {
+ color: var(--text-primary-color);
+}
+.contact-info a:hover {
+ color: var(--primary-color);
+}
+
+/* --- 6. 页脚 --- */
+.main-footer {
+ background-color: var(--bg-main-color);
+ color: var(--text-secondary-color);
+ text-align: center;
+ padding: 30px 0;
+ font-size: 0.9rem;
+}
+
+
+/* --- 响应式设计 --- */
+@media (max-width: 992px) {
+ body {
+ display: block; /* 取消flex布局，让导航栏和内容区正常排列 */
+ }
+ .sidebar {
+ width: 100%;
+ height: auto;
+ position: static; /* 取消固定定位 */
+ border-right: none;
+ border-bottom: 1px solid var(--border-color);
+ }
+ .main-content {
+ margin-left: 0; /* 取消左边距 */
+ }
+ .home-container {
+ flex-direction: column; /* 主页内容垂直排列 */
+ text-align: center;
+ padding: 4rem 0;
+ }
+ .home-text .name {
+ font-size: 4rem;
+ }
+ .travel-gallery {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ .case-study-details {
+ grid-template-columns: 1fr;
+ }
+}
+
+@media (max-width: 768px) {
+ h2 { font-size: 2.5rem; }
+ .travel-gallery {
+ grid-template-columns: 1fr; /* 手机上变为单列 */
+ }
+ .case-study-comparison {
+ grid-template-columns: 1fr;
+ }
+}

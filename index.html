@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!-- The lang attribute is still zh-CN as the target audience might be Chinese speakers,
+     but the content itself is English. You can change it to "en" if you prefer. -->
+<html lang="zh-CN">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Li Meizi - Personal Website</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ============================================= -->
+    <!-- Sidebar Navigation -->
+    <!-- ============================================= -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <img src="images/identification photo.jpg" alt="Li Meizi's Avatar" class="sidebar-avatar">
+            <h3>Li Meizi</h3>
+            <p>Personal Website</p>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Homepage</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#ai-digital-media">AI & Digital Media</a></li>
+          <li><a href="#content-creation">Content Creation</a></li>
+          <li><a href="#hobby">Hobby</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+     </nav>
+
+    <!-- ============================================= -->
+    <!-- Main Content Area -->
+    <!-- ============================================= -->
+    <main class="main-content">
+
+<!-- =================== 1. 主页部分 (文字+照片经典布局) =================== -->
+<section id="home" class="content-section">
+    <div class="home-container">
+
+        <!-- 1. 文字区域 (在左) -->
+        <div class="home-text">
+            <h1>Hi, I'm <span class="highlight-name">Li Meizi</span></h1>
+            <p class="home-tagline">
+                I am a versatile talent with both data analysis skills and marketing planning experience, dedicated to driving the growth and innovation of digital media with AI and data insights.
+            </p>
+        </div>
+        
+        <!-- 2. 照片区域 (在右) -->
+        <div class="home-photo">
+            <img src="images/homepage.JPG" alt="Li Meizi 的个人照片">
+        </div>
+
+    </div>
+</section>
+
+        <!-- 2. Education Section -->
+        <section id="education" class="content-section">
+            <h2>Education</h2>
+            <div class="edu-item">
+                <img src="data:image/png;base64,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" alt="Hong Kong Baptist University Logo" class="edu-logo">
+                <div class="edu-text">
+                    <h3>Hong Kong Baptist University (09/2025 – 06/2026)</h3>
+                    <p>Master of Science in AI and Digital Media</p>
+                </div>
+            </div>
+            <div class="edu-item">
+                <img src="data:image/jpeg;base64,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" alt="Guangdong University of Finance and Economics Logo" class="edu-logo">
+                <div class="edu-text">
+                    <h3>Guangdong University of Finance and Economics (09/2020 – 06/2024)</h3>
+                    <p>Bachelor of Business Administration, Cultural Industry Management</p>
+                </div>
+            </div>
+
+            
+        </section> 
+<!-- ====================================================== -->
+<!--             AI & Digital Media Section                 -->
+<!-- ====================================================== -->
+<section id="ai-digital-media" class="content-section">
+    <h2>AI & Digital Media</h2>
+
+    <!-- 【关键修改】将标题移到这里，并应用新样式 -->
+    <h3>Data Analysis & Visualization</h3>
+
+    <!-- Project: An Unbalanced Scale -->
+    <div style="margin-top: 20px;">
+        <h4 style="text-align: center; margin-bottom: 20px;">
+        An Unbalanced Scale — Hong Kong's Dietary Risk Profile
+    </h4>
+
+
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; margin-top: 15px;">
+            <!-- Image Column -->
+            <div style="flex: 1; min-width: 300px;">
+                <img src="images/data anlaysis.jpg" alt="Data visualization of Hong Kong's dietary profile" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            </div>
+            <!-- Text Column -->
+            <div style="flex: 2; min-width: 300px;">
+                <p>
+                    <strong>Project Background:</strong>
+                    This project originated from an unexpected discovery. While visualizing the UN FAO’s 2024 dietary data to identify obesity-related risks, the most striking outlier was not the United States, but Hong Kong. My analysis, focusing on meat, sugar, fats, and alcohol, uncovered a critical public health signal.
+                </p>
+                <p>
+                    <strong>Key Findings:</strong>
+                    A comparative bar chart revealed that Hong Kong's per capita energy from meat is a staggering <strong>731 kcal/day</strong>, rivaling the US and dwarfing regional averages. The true insight, however, lies in its dietary structure. Unlike the US, where energy intake is spread across fats and sugars, Hong Kong exhibits an overwhelmingly <strong>"meat-centric"</strong> dietary pattern. This extreme imbalance is a direct visual alarm for public health, as high meat consumption is consistently linked to increased risks of obesity and cardiovascular disease.
+                </p>
+                <p>
+                    <strong>Value & Impact:</strong>
+                    The core value of this project is its ability to distill a complex nutritional issue into a single, powerful insight. Through precise data filtering and intuitive visualization, I transformed a vast dataset into an easily understandable warning: Hong Kong's dietary scale is dangerously tipped. It demonstrates the power of data visualization to make hidden risks "speak for themselves," providing clear, actionable evidence for public health intervention. The immediate recommendation is to prioritize optimizing dietary structure, shifting focus from animal to plant-based sources to mitigate a long-term health crisis.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 您可以在这里添加更多 AI & Digital Media 的子项目... -->
+
+</section>
+  
+  <!-- More sub-content / sub-projects... -->
+
+<!-- ====================================================== -->
+<!--             Content Creation Section                 -->
+<!-- ====================================================== -->
+<section id="content-creation" class="content-section">
+    <h2>Content Creation</h2>
+
+    <!-- Poster Design Sub-section -->
+    <div class="sub-category">
+        <h3 id="poster-design">Poster Design</h3>
+        <!-- 这个网格现在会根据我们新的CSS规则，呈现为适合竖长海报的布局 -->
+        <div class="hobby-photo-grid grid-vertical-posters">
+            <div class="photo-item">
+                <img src="images/draft1.jpeg" alt="Poster Design - Concept Draft">
+                <div class="photo-overlay">
+                    <h3>Design Draft</h3>
+                </div>
+            </div>
+            <div class="photo-item">
+                <img src="images/final work.jpeg" alt="Poster Design - Final Artwork">
+                <div class="photo-overlay">
+                    <h3>Final Artwork</h3>
+                </div>
+            </div>
+        </div>
+        <div class="project-description">
+            <p>
+                <strong>Project Brief:</strong> This promotional poster was designed for the Kizer "X-Series" knife. The concept was heavily inspired by the cyberpunk aesthetic of the film <em>Blade Runner</em>.
+            </p>
+            <p>
+                <strong>My Contribution & Design Process:</strong> I created the initial concept draft, which served as a clear visual guide for the design team. The creative direction centered on a blue-green color palette and a blurred skyscraper background to evoke a futuristic, urban atmosphere. By manipulating light and shadow, the final design enhances the product's sense of technology and mystery, delivering a unique and impactful visual.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================== -->
+<!--                   Hobbies Section                      -->
+<!-- ====================================================== -->
+<section id="hobby" class="content-section">
+    <div class="container">
+        <h2>Hobbies</h2>
+        <p class="section-subtitle">Finding wonder and stories in every corner of life.</p>
+
+        <!-- Category: Travel Photography -->
+        <div class="hobby-category">
+            <h3>Travel Photography</h3>
+            <!-- 【关键修改】为网格添加了 'grid-three-columns' 类 -->
+            <div class="hobby-photo-grid grid-three-columns">
+                <!-- 【关键修改】为每个卡片添加了 'aspect-ratio-card' 类 -->
+                <div class="photo-item aspect-ratio-card">
+                    <img src="images/Beijing.jpg" alt="Temple of Heaven in Beijing">
+                    <div class="photo-overlay">
+                        <h3>BEIJING</h3>
+                    </div>
+                </div>
+                <div class="photo-item aspect-ratio-card">
+                    <img src="images/changsha.jpg" alt="Scenery of Changsha">
+                    <div class="photo-overlay">
+                        <h3>CHANGSHA</h3>
+                    </div>
+                </div>
+                <div class="photo-item aspect-ratio-card">
+                    <img src="images/shenzhen.jpg" alt="Scenery of Shenzhen">
+                    <div class="photo-overlay">
+                        <h3>SHENZHEN</h3>
+                    </div>
+                </div>
+                <div class="photo-item aspect-ratio-card">
+                    <img src="images/tianjin.jpg" alt="Scenery of Tianjin">
+                    <div class="photo-overlay">
+                        <h3>TIANJIN</h3>
+                    </div>
+                </div>
+                <div class="photo-item aspect-ratio-card">
+                    <img src="images/yanji.jpg" alt="Scenery of Yanji">
+                    <div class="photo-overlay">
+                        <h3>YANJI</h3>
+                    </div>
+                </div>
+                <div class="photo-item aspect-ratio-card">
+                    <img src="images/yunan.jpg" alt="Scenery of Yunan">
+                    <div class="photo-overlay">
+                        <h3>YUNAN</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Dramas -->
+        <div class="hobby-category">
+            <h3>Dramas</h3>
+            <!-- 【关键修改】同样应用三列布局和固定比例卡片 -->
+            <div class="hobby-photo-grid grid-three-columns">
+                <div class="photo-item aspect-ratio-card">
+                    <img src="images/Only This Green.JPG" alt="Poster: Only This Green">
+                    <div class="photo-overlay">
+                        <h3>ONLY THIS GREEN</h3>
+                    </div>
+                </div>
+                <div class="photo-item aspect-ratio-card">
+                    <img src="images/Left Unsaid.JPG" alt="Poster: Left Unsaid">
+                    <div class="photo-overlay">
+                        <h3>LEFT UNSAID</h3>
+                    </div>
+                </div>
+                <!-- 如果这里有第三张图，它也会在同一行 -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Contact Section -->
+ <section id="contact" class="content-section">
+ <h2>Contact</h2>
+ <div class="contact-info">
+ <p>
+ <i class="fas fa-envelope"></i> 
+ <a href="mailto:25443879@life.hkbu.edu.hk">25443879@life.hkbu.edu.hk</a>
+ </p>
+ <p>
+ <i class="fas fa-phone"></i> 
+ <!-- Using tel: protocol to make the phone number clickable on mobile -->
+ <a href="tel:+85270196742">+852 70196742</a>
+ </p>
+ </div>
+ </section>
+ 
+ <!-- ============================================= -->
+ <!-- Footer -->
+ <!-- ============================================= -->
+ <footer class="main-footer">
+ <p>&copy; 2024 Li Meizi. All rights reserved.</p>
+ </footer>
+
+ </main>
+
+</body>
