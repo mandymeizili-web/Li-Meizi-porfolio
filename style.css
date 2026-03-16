@@ -467,3 +467,88 @@ a:hover {
  grid-template-columns: 1fr;
  }
 }
+
+/* =================================================
+   Reusable Project Component Styling
+   ================================================= */
+
+/* 1. 项目总容器 */
+.project-container {
+    margin-top: 4rem; /* 和上一个项目的间距 */
+    margin-bottom: 4rem;
+}
+
+/* 2. 项目标题 (居中) */
+.project-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: var(--text-primary-color);
+}
+
+/* 3. 项目布局容器 (Flexbox) */
+.project-layout {
+    display: flex;
+    flex-wrap: wrap; /* 在小屏幕上换行 */
+    gap: 2rem; /* 左右两栏的间距 */
+    align-items: flex-start;
+}
+
+/* 4. 左侧图片栏 */
+.project-image-column {
+    flex: 1; /* 占据1份空间 */
+    min-width: 300px; /* 最小宽度，用于响应式 */
+}
+
+.project-image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* 5. 右侧文字栏 */
+.project-text-column {
+    flex: 2; /* 占据2份空间，比图片栏更宽 */
+    min-width: 300px;
+}
+
+/* 新增：项目副标题 (居中) */
+.project-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400; /* 使用正常字重，与主标题区分 */
+    font-style: italic; /* 设为斜体，更像副标题 */
+    color: var(--text-secondary-color);
+    margin-top: -1.5rem; /* 向上移动，靠近主标题 */
+    margin-bottom: 2rem; /* 和下方的项目内容保持间距 */
+}
+
+
+.project-text-column p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+/* 6. GitHub 仓库按钮 */
+.btn-repo {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--text-primary-color); /* 深灰色背景 */
+    color: white;
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-repo:hover {
+    background-color: #000000; /* 悬停时变纯黑 */
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-repo .fab {
+    margin-right: 0.5rem; /* 图标和文字的间距 */
+}
